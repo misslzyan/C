@@ -8,6 +8,7 @@ size_t strlen(const char*s) {
   }
   return p - s;
 }
+
 char * strcpy( char *restrict s1, const char *restrict s2){
   char *dst = s1;
   const char *src = s2;
@@ -15,6 +16,7 @@ char * strcpy( char *restrict s1, const char *restrict s2){
   while((*dst++=*src++)!='\0');
   return s1;
 }
+
 char * (strcat)(char *restrict s1, const char *restrict s2){
   char *dst = s1;
   /*move pointer to the end of s1*/
@@ -23,4 +25,12 @@ char * (strcat)(char *restrict s1, const char *restrict s2){
   strcpy(dst, s2);
   return s1;
 }
+
+char *(strchr)(const char *s, int c) {
+  char ch = c;
+  while (*s != '\0' && *s != ch) {
+    s++;
+  }
+  return (*s == ch) ? (char *) s : NULL;
+} 
 #endif

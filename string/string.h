@@ -47,6 +47,13 @@ char * strcpy( char *restrict s1, const char *restrict s2){
   return s1;
 }
 
+char * strncpy(char *restrict s1, const char *restrict s2, size_t n) {
+  char *dst = s1;
+  const char *src = s2;
+  while(n-->0&&(*dst++ = *src++));
+  return s1;
+}
+
 char * (strcat)(char *restrict s1, const char *restrict s2){
   char *dst = s1;
   /*move pointer to the end of s1*/
